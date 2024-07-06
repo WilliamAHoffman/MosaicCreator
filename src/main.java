@@ -119,15 +119,15 @@ public class main {
         try {
             File textureFolder = new File(name);
             Scanner dictionary = new Scanner(textureFolder);
-            ArrayList<String> pallet = new ArrayList<>();
+            ArrayList<String> whiteList = new ArrayList<>();
             while(dictionary.hasNext()){
-                pallet.add(dictionary.next());
+                whiteList.add(dictionary.next());
             }
             dictionary.close();
-            return pallet;
+            return whiteList;
         }
         catch (Exception IOException){
-            System.out.println("pallet error");
+            System.out.println("whiteList error");
             return null;
         }
     }
@@ -135,18 +135,18 @@ public class main {
     static ArrayList<File> textureStartUp(){
         File textureFolder = new File("texturePack");
         ArrayList<File> textures = new ArrayList<>();
-        ArrayList<String> pallet = readFile("pallet.txt");
-        ArrayList<String> muted = readFile("muted.txt");
+        ArrayList<String> whiteList = readFile("whiteList.txt");
+        ArrayList<String> blackList = readFile("blackList.txt");
 
-        if(pallet.size() == 0){
+        if(whiteList.size() == 0){
             for(File texture : textureFolder.listFiles()){
-                if(!muted.contains(texture.getName().replace(".png", ""))){
+                if(!blackList.contains(texture.getName().replace(".png", ""))){
                     textures.add(texture);
                 }
             }
         }
         else {
-            for(String texture : pallet){
+            for(String texture : whiteList){
                 textures.add(new File("texturePack/" + texture + ".png"));
             }
         }
