@@ -5,9 +5,9 @@
   
   If you wish to use this program yourself first you must download all the files. Then add a folder called "texturePack" this folder will hold all the 16x16 images which you would liked to be used for the conversion. When I tested this project I used textures from the game *Minecraft*. I do not own these textures so I have not included them. I have provided an example output image using these textures in the "output" folder. 
 
-  Once you have added all the textures you want into the folder you will have to erase the example text in the file called "muted.txt". This file takes in names of textures (minus the file entension) and will not allow them to be used in the image. This is useful if you think some textures look bad but you don't want to remove them from the folder.
+  Once you have added all the textures you want into the folder you will have to erase the example text in the file called "blackList.txt". This file takes in names of textures (minus the file entension) and will not allow them to be used in the image. This is useful if you think some textures look bad but you don't want to remove them from the folder.
 
-  Next you must erase the example palette in the file called "pallet.txt". This file is the opposite of the "muted.txt" file. It only allows textrures to be used which are included in the file. Also I am aware that it should be spelled "palette" so I may change this at some point. I have provided some example palettes in "unusedPallet.txt". 
+  Next you must erase the example palette in the file called "whiteList.txt". This file is the opposite of the "blackList.txt" file. It only allows textrures to be used which are included in the file. I have provided some example palettes for whiteList in "unusedPallet.txt". 
 
   Finally delete the example image I added in "placeImageHere" and put your own image in as input. Then run this program through IntelliJ or some other program and it will convert images quickly.
 
